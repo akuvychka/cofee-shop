@@ -50,3 +50,402 @@ Migrating to AddProducts (20221021182148)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210352"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDiscounts (20221021210631)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "discounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "discount_type" integer NOT NULL, "amount" decimal NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210631"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "product_combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "combo_id" integer NOT NULL, "discount_id" integer)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (2.3ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 1], ["amount", 10.0]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscount Load (0.1ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" ORDER BY "discounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.3ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" ORDER BY "discounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "Esspresso"], ["price", 5.0], ["tax_rate", 0.08], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "Bagel"], ["price", 7.0], ["tax_rate", 0.03], ["storage_amount", 2]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Esspresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (0.2ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 0], ["amount", 7.0]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscount Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "discounts"[0m
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" ORDER BY "discounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Destroy (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.4ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Espresso + Bagel"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Destroy (0.3ms)[0m  [1m[31mDELETE FROM "combos" WHERE "combos"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ?[0m  [["name", "Espresso"]]
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "Espresso"], ["price", 5.0], ["tax_rate", 0.08], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ?[0m  [["name", "Espresso"]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "Mocka"], ["price", 10.0], ["tax_rate", 0.08], ["storage_amount", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "Bagel"], ["price", 7.0], ["tax_rate", 0.03], ["storage_amount", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (2.1ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Espresso + Bagel"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 3], ["combo_id", 2], ["discount_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 5], ["combo_id", 2], ["discount_id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Mocka + Bagel"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 4], ["combo_id", 3], ["discount_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 5], ["combo_id", 3], ["discount_id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.7ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" ORDER BY "combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 3]]
+  [1m[36mProductCombo Load (0.3ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.4ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.9ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.4ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.4ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (1.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.9ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "product_combos"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDiscounts (20221021210631)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "discounts"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210631"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "combos"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210352"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210352"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDiscounts (20221021210631)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "discounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "discount_type" integer NOT NULL, "amount" decimal NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210631"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "product_combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "combo_id" integer NOT NULL, "discounts_id" integer, CONSTRAINT "fk_rails_bcd22fd219"
+FOREIGN KEY ("discounts_id")
+  REFERENCES "discounts" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_product_combos_on_discounts_id" ON "product_combos" ("discounts_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (0.2ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 1], ["amount", 10.0]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (0.1ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 0], ["amount", 7.0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.2ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Espresso + Bagel"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.3ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Mocka + Bagel"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mProductCombo Load (0.2ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.4ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Mocka + Bagel"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDiscount Load (0.7ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "product_combos"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "product_combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "combo_id" integer NOT NULL, "discount_id" integer)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.3ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "product_combos"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDiscounts (20221021210631)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "discounts"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210631"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "combos"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20221021210352"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCombos (20221021210352)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210352"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDiscounts (20221021210631)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "discounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "discount_type" integer NOT NULL, "amount" decimal NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210631"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddProductCombos (20221021210701)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "product_combos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "combo_id" integer NOT NULL, "discount_id" integer)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021210701"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (0.2ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 1], ["amount", 10.0]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscount Create (0.1ms)[0m  [1m[32mINSERT INTO "discounts" ("discount_type", "amount") VALUES (?, ?)[0m  [["discount_type", 0], ["amount", 7.0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Espresso + Bagel"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProductCombo Create (0.2ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 3], ["combo_id", 1], ["discount_id", nil]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 5], ["combo_id", 1], ["discount_id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "combos" ("name") VALUES (?)[0m  [["name", "Mocka + Bagel"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 4], ["combo_id", 2], ["discount_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? ORDER BY "products"."id" ASC LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? ORDER BY "discounts"."id" ASC LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProductCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "product_combos" ("product_id", "combo_id", "discount_id") VALUES (?, ?, ?)[0m  [["product_id", 5], ["combo_id", 2], ["discount_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProductCombo Load (0.1ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.2ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.1ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."product_combo_id" = ? LIMIT ?[0m  [["product_combo_id", 4], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.1ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.3ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.0ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProductCombo Load (0.2ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" ORDER BY "product_combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDiscount Load (0.1ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCustomers (20221021230604)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar NOT NULL, "last_name" varchar, "contact_type" integer, "contact" varchar)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021230604"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOrders (20221021230759)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" integer NOT NULL, "user_id" integer NOT NULL, "final_price" decimal DEFAULT 0.0)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021230759"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOrderProducts (20221021230954)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "order_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer NOT NULL, "product_id" integer NOT NULL, "amount" integer NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021230954"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mCustomer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "F Name"], ["last_name", nil], ["contact_type", 1], ["contact", "email@email.email"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mCustomer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers"[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
