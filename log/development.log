@@ -449,3 +449,389 @@ Migrating to AddOrderProducts (20221021230954)
   [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
   [1m[36mCustomer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers"[0m
   [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:12:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `action_encoding_template' for ProductsController:Class):
+  
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+jsonapi-rails (0.4.1) lib/jsonapi/rails/filter_media_type.rb:16:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Espresso"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Bagel"], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 1], ["amount", 10.0], ["LIMIT", 1]]
+  [1m[36mDiscount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discounts" WHERE "discounts"."discount_type" = ? AND "discounts"."amount" = ? LIMIT ?[0m  [["discount_type", 0], ["amount", 7.0], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Espresso + Bagel"], ["LIMIT", 1]]
+  [1m[36mCombo Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "combos" WHERE "combos"."name" = ? LIMIT ?[0m  [["name", "Mocka + Bagel"], ["LIMIT", 1]]
+  [1m[36mCustomer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers"[0m
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:13:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `action_encoding_template' for ProductsController:Class):
+  
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+jsonapi-rails (0.4.1) lib/jsonapi/rails/filter_media_type.rb:16:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:19:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `action_encoding_template' for ProductsController:Class):
+  
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:20:09 -0500
+  
+TypeError (superclass must be an instance of Class (given an instance of Module)):
+  
+app/controllers/products_controller.rb:4:in `<main>'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:20:26 -0500
+Processing by ProductsController#index as */*
+Completed 200 OK in 24ms (Views: 0.6ms | Allocations: 3107)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:20:40 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 19438)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:22:09 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 5141)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:22:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 21829)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:23:18 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 9ms (Allocations: 6193)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/mailer
+               layouts/rails/conductor
+               layouts/application
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:23:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 9680)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/mailer
+               layouts/rails/conductor
+               layouts/application
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:26:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 9679)
+
+
+  
+ActionView::MissingTemplate (Missing template products/index, application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/mailer
+               layouts/rails/conductor
+               layouts/application
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:27:24 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.3ms | Allocations: 18496)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:27:46 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 5474)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:29:19 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 9ms (Allocations: 3567)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/products_controller.rb:6:in `new'
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:29:40 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 5ms (Allocations: 3551)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/products_controller.rb:6:in `new'
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:29:51 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 5ms (Allocations: 3538)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/products_controller.rb:6:in `new'
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:30:06 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 9ms (Allocations: 3551)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/products_controller.rb:6:in `new'
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:31:16 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.4ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 73ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 26799)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:32:02 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.6ms | Allocations: 5343)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/products_controller.rb:7:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-21 19:32:15 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.5ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 61ms (Views: 1.8ms | ActiveRecord: 3.1ms | Allocations: 34261)
+
+
