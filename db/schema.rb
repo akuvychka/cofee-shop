@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_22_170841) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_180257) do
   create_table "combos", force: :cascade do |t|
     t.string "name"
     t.boolean "active", default: true
@@ -35,8 +35,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_170841) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "status", null: false
-    t.integer "user_id", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "customer_id", null: false
     t.decimal "final_price", default: "0.0"
   end
 
