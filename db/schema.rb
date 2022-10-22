@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_230954) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_170841) do
   create_table "combos", force: :cascade do |t|
     t.string "name"
+    t.boolean "active", default: true
   end
 
   create_table "customers", force: :cascade do |t|

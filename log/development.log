@@ -835,3 +835,509 @@ Processing by ProductsController#index as */*
 Completed 200 OK in 61ms (Views: 1.8ms | ActiveRecord: 3.1ms | Allocations: 34261)
 
 
+Started GET "/products" for 127.0.0.1 at 2022-10-21 21:29:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like '')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 8346)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 21:30:49 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like ?)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3855)
+
+
+  [1m[36mProduct Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Started GET "/products" for 127.0.0.1 at 2022-10-21 21:31:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.3ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 54428)
+
+
+Started GET "/products?search=e" for 127.0.0.1 at 2022-10-21 21:32:10 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"e"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like e)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms | Allocations: 1534)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: e):
+  
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products?search=e" for 127.0.0.1 at 2022-10-21 21:32:28 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"e"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like 'e')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3877)
+
+
+Started GET "/products?search=ba" for 127.0.0.1 at 2022-10-21 21:32:40 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"ba"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like 'ba')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 770)
+
+
+Started GET "/products?search=Ba" for 127.0.0.1 at 2022-10-21 21:32:44 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"Ba"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like 'Ba')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 770)
+
+
+Started GET "/products?search=B" for 127.0.0.1 at 2022-10-21 21:32:51 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"B"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like 'B')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 759)
+
+
+Started GET "/products?search=B" for 127.0.0.1 at 2022-10-21 21:33:11 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"B"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like '%B%')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (1.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 18137)
+
+
+Started GET "/products?search=e" for 127.0.0.1 at 2022-10-21 21:33:20 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"e"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like '%e%')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.1ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?)[0m  [["product_id", 3], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 3237)
+
+
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" ORDER BY "combos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id"[0m
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "product_combos" "product_combos_combos_join" ON "product_combos_combos_join"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos_combos_join"."product_id"[0m
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "product_combos" "product_combos_combos_join" ON "product_combos_combos_join"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos_combos_join"."product_id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mCombo Load (1.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "product_combos" "product_combos_combos_join" ON "product_combos_combos_join"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos_combos_join"."product_id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mCombo Load (1.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "product_combos" "product_combos_combos_join" ON "product_combos_combos_join"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos_combos_join"."product_id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Mocka"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Update (7.7ms)[0m  [1m[33mUPDATE "products" SET "storage_amount" = ? WHERE "products"."id" = ?[0m  [["storage_amount", 0], ["id", 4]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "product_combos" "product_combos_combos_join" ON "product_combos_combos_join"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos_combos_join"."product_id" WHERE (products.storage_amount > 0)[0m
+Started GET "/products?search=e" for 127.0.0.1 at 2022-10-21 21:46:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as */*
+  Parameters: {"search"=>"e"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0 AND name like '%e%')[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?)[0m  [["product_id", 3], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.0ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 59904)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-21 21:46:23 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (6.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.2ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?)[0m  [["product_id", 3], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (3.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.3ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 57ms (Views: 0.7ms | ActiveRecord: 10.1ms | Allocations: 5054)
+
+
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (products.storage_amount > 0)[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos"[0m
+  [1m[36mProductCombo Load (0.3ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  [1m[36mCombo Load (1.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE (storage_amount > 0) AND (sum(product.id) = sum(product_combo.id))[0m
+  [1m[36mCombo Load (0.7ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (sum(product.id) = sum(product_combo.id))[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0)[0m
+  [1m[36mCombo Load (1.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE (storage_amount > 0)[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0)[0m
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (Count(product.id) > 1)[0m
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (product.storage_amount > 0) AND (Count(product.id) > 1)[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (product.storage_amount > 0)[0m
+  [1m[36mCombo Load (1.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0)[0m
+  [1m[36mCombo Load (4.7ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1)[0m
+  [1m[36mCombo Load (0.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCombo Load (1.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(product_id) > 1)[0m
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (count(product_id) > 1)[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (sum(product_id) > 1)[0m
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (sum(id) > 1)[0m
+  [1m[36mCombo Load (1.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (count(id) > 1)[0m
+  [1m[36mCombo Load (0.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id"[0m
+  [1m[36mCombo Load (1.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" GROUP BY "combos"."id"[0m
+  [1m[36mCombo Load (0.9ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id"[0m
+  [1m[36mCombo Load (0.9ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (count(combo_id) > 0) GROUP BY "combos"."id"[0m
+  [1m[36mCombo Load (1.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) AND (sum(combo_id) > 0) GROUP BY "combos"."id"[0m
+  [1m[36mCombo Load (2.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (sum(combo_id) > 0)[0m
+  [1m[36mCombo Load (1.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (sum(product.id) = sum(product_combos.combo_id))[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (sum(product.id) = 2)[0m
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (sum(product_id) = 2)[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (sum(product_id) = 1)[0m
+  [1m[36mCombo Load (0.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = 1)[0m
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = 2)[0m
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = count(combo_id))[0m
+  [1m[36mCombo Load (1.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = id))[0m
+  [1m[36mCombo Load (1.8ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = combo.id))[0m
+  [1m[36mCombo Load (0.9ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Update (1.5ms)[0m  [1m[33mUPDATE "products" SET "storage_amount" = ? WHERE "products"."id" = ?[0m  [["storage_amount", 1], ["id", 4]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCombo Load (13.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:00:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/combos"):
+  
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:01:37 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.7ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.2ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.0ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 111ms (Views: 1.1ms | ActiveRecord: 4.5ms | Allocations: 22263)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:01:57 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.3ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 7236)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:03:55 -0500
+Processing by ProductsController#index as */*
+Completed 500 Internal Server Error in 7ms (Allocations: 3654)
+
+
+  
+SyntaxError (/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/serializers/combo_serializer.rb:13: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/serializers/combo_serializer.rb:13: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/combo_serializer.rb:13: syntax error, unexpected end-of-input, expecting `end'
+app/serializers/combo_serializer.rb:13: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/products_controller.rb:6:in `new'
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:04:04 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.6ms | Allocations: 19443)
+
+
+  
+NameError (undefined local variable or method `products' for ComboSerializer:Class):
+  
+app/serializers/combo_serializer.rb:11:in `block in <class:ComboSerializer>'
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:05:02 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.4ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.1ms | Allocations: 19400)
+
+
+  
+NameError (undefined local variable or method `products' for ComboSerializer:Class):
+  
+app/serializers/combo_serializer.rb:11:in `block in <class:ComboSerializer>'
+app/controllers/products_controller.rb:11:in `index'
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:05:34 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.2ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 86ms (Views: 1.2ms | ActiveRecord: 4.3ms | Allocations: 20950)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:06:02 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (1.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.2ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 164ms (Views: 14.2ms | ActiveRecord: 1.7ms | Allocations: 8170)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:06:24 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.9ms)[0m  [1m[34mSELECT "combos".* FROM "combos" INNER JOIN "product_combos" ON "product_combos"."combo_id" = "combos"."id" INNER JOIN "products" ON "products"."id" = "product_combos"."product_id" WHERE (storage_amount > 0) GROUP BY "combos"."id" HAVING (count(product_id) = (select count(combo_id) from product_combos where combo_id = "combos"."id"))[0m
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 24890)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddActiveToCombos (20221022170841)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "combos" ADD "active" boolean DEFAULT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221022170841"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:09:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.2ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.3ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.2ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 86ms (Views: 1.3ms | ActiveRecord: 2.8ms | Allocations: 33530)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:10:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.2ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.0ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 57888)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:10:34 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.5ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.4ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.0ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 106ms (Views: 0.5ms | ActiveRecord: 6.0ms | Allocations: 36949)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:11:10 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.6ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.3ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:11:in `index'
+Completed 200 OK in 168ms (Views: 3.1ms | ActiveRecord: 5.3ms | Allocations: 22106)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:12:24 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.6ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProductCombo Load (1.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mCombo Pluck (0.1ms)[0m  [1m[34mSELECT "combos"."id" FROM "combos" INNER JOIN "product_combos" ON "combos"."id" = "product_combos"."combo_id" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+Completed 200 OK in 104ms (Views: 1.0ms | ActiveRecord: 7.2ms | Allocations: 22019)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:13:20 -0500
+Processing by CombosController#index as */*
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms | Allocations: 4438)
+
+
+  
+NameError (ComboSerializer cannot resolve a serializer class for 'product'.  Attempted to find 'ProductSerializer'. Consider specifying the serializer directly through options[:serializer].):
+  
+app/controllers/combos_controller.rb:6:in `new'
+app/controllers/combos_controller.rb:6:in `index'
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:17:05 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.5ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProductCombo Load (0.4ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+Completed 200 OK in 66ms (Views: 12.4ms | ActiveRecord: 3.7ms | Allocations: 18442)
+
+
+Started GET "/combos" for 127.0.0.1 at 2022-10-22 12:17:23 -0500
+Processing by CombosController#index as */*
+  [1m[36mCombo Load (0.4ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProductCombo Load (0.4ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" IN (?, ?)[0m  [["combo_id", 1], ["combo_id", 2]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 5], ["id", 4]]
+  ↳ app/controllers/combos_controller.rb:12:in `index'
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 18393)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:17:41 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProductCombo Load (0.4ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.1ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+  [1m[36mProduct Pluck (0.0ms)[0m  [1m[34mSELECT "products"."id" FROM "products" INNER JOIN "product_combos" ON "products"."id" = "product_combos"."product_id" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 2]]
+  ↳ app/controllers/products_controller.rb:11:in `index'
+Completed 200 OK in 38ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 21029)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-10-22 12:18:13 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  ↳ app/controllers/products_controller.rb:12:in `index'
+  [1m[36mProductCombo Load (4.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" IN (?, ?, ?)[0m  [["product_id", 3], ["product_id", 4], ["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:12:in `index'
+  [1m[36mCombo Load (0.1ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:12:in `index'
+Completed 200 OK in 104ms (Views: 0.5ms | ActiveRecord: 6.7ms | Allocations: 18311)
+
+

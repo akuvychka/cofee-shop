@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :products, only: :index
+  resources :combos, only: :index
 end
