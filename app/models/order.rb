@@ -13,8 +13,14 @@ class Order < ApplicationRecord
     # TODO: add logic for update total_price
   end
 
+  def next_status
+    update(status: Order.statuses[status] + 1)
+    reload
+  end
+
   private
 
+  # rubocop:disable Metrics/AbcSize
   def validate_state
     case status_was
     when 'open'
@@ -27,4 +33,5 @@ class Order < ApplicationRecord
       errors.add(:status, 'Unexpected transition') unless Order.statuses[status] - Order.statuses[status_was] == 1
     end
   end
+  # rubocop:enable Metrics/AbcSize
 end

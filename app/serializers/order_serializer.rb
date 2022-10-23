@@ -4,7 +4,7 @@
 class OrderSerializer < BaseSerializer
   set_type :order
 
-  attribute :final_price
+  attributes :final_price, :status
 
   has_many :order_products
 end

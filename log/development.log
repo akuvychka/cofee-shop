@@ -3223,3 +3223,442 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 6.7ms | Allocations: 4375)
 
 
+Started POST "/orders" for 127.0.0.1 at 2022-10-22 19:15:22 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/orders"):
+  
+Started POST "/orders/new" for 127.0.0.1 at 2022-10-22 19:16:06 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/orders/new"):
+  
+Started GET "/orders/new" for 127.0.0.1 at 2022-10-22 19:16:21 -0500
+Processing by OrdersController#new as */*
+Completed 200 OK in 40ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 13969)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2022-10-22 19:17:06 -0500
+Processing by OrdersController#new as */*
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 3.5ms | Allocations: 10975)
+
+
+  
+NoMethodError (undefined method `reload' for false:FalseClass):
+  
+app/controllers/orders_controller.rb:8:in `new'
+Started GET "/orders/new" for 127.0.0.1 at 2022-10-22 19:17:24 -0500
+Processing by OrdersController#new as */*
+Completed 404 Not Found in 39ms (ActiveRecord: 1.3ms | Allocations: 10773)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order without an ID):
+  
+app/controllers/orders_controller.rb:9:in `new'
+Started GET "/orders/new" for 127.0.0.1 at 2022-10-22 19:17:53 -0500
+Processing by OrdersController#new as */*
+Completed 404 Not Found in 15ms (ActiveRecord: 1.1ms | Allocations: 11173)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order without an ID):
+  
+app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 19:18:43 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms | Allocations: 7696)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/orders_controller.rb:7:in `new'
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 19:19:04 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 7640)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/orders_controller.rb:7:in `new'
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 19:19:38 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms | Allocations: 7640)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/orders_controller.rb:7:in `new'
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 19:21:35 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/controllers/orders_controller.rb:10:in `new'
+Completed 200 OK in 49ms (Views: 0.8ms | ActiveRecord: 3.1ms | Allocations: 32313)
+
+
+Started DELETE "/orders/1" for 127.0.0.1 at 2022-10-22 19:22:56 -0500
+Processing by OrdersController#destroy as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:21:in `find_order'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mOrder Update (6.1ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 8.0ms | Allocations: 17743)
+
+
+  
+ActionView::MissingTemplate (Missing template orders/destroy, application/destroy with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/application):
+  
+app/controllers/orders_controller.rb:15:in `destroy'
+Started DELETE "/orders/1" for 127.0.0.1 at 2022-10-22 19:23:44 -0500
+Processing by OrdersController#destroy as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:21:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+Completed 422 Unprocessable Entity in 45ms (ActiveRecord: 1.2ms | Allocations: 4259)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Status Unexpected transition):
+  
+app/controllers/orders_controller.rb:13:in `destroy'
+Started DELETE "/orders/2" for 127.0.0.1 at 2022-10-22 19:26:38 -0500
+Processing by OrdersController#destroy as */*
+  Parameters: {"id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:21:in `find_order'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mOrder Update (1.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 2]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 5.3ms | Allocations: 4322)
+
+
+  
+ActionView::MissingTemplate (Missing template orders/destroy, application/destroy with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  rails/conductor/action_mailbox/inbound_emails/index
+               layouts/rails/conductor
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new
+               rails/conductor/action_mailbox/inbound_emails/show
+               layouts/application):
+  
+app/controllers/orders_controller.rb:15:in `destroy'
+Started DELETE "/orders/2" for 127.0.0.1 at 2022-10-22 19:28:40 -0500
+Processing by OrdersController#destroy as */*
+  Parameters: {"id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:21:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+Completed 422 Unprocessable Entity in 96ms (ActiveRecord: 3.3ms | Allocations: 15928)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Status Unexpected transition):
+  
+app/controllers/orders_controller.rb:13:in `destroy'
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 19:28:47 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:7:in `new'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+Completed 200 OK in 25ms (Views: 0.9ms | ActiveRecord: 2.0ms | Allocations: 7184)
+
+
+Started DELETE "/orders/3" for 127.0.0.1 at 2022-10-22 19:29:00 -0500
+Processing by OrdersController#destroy as */*
+  Parameters: {"id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:21:in `find_order'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mOrder Update (0.4ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 3]]
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:13:in `destroy'
+Completed 204 No Content in 51ms (ActiveRecord: 3.7ms | Allocations: 3182)
+
+
+Started POST "/orders?id=3" for 127.0.0.1 at 2022-10-22 20:08:36 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mOrderProduct Load (0.2ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders_controller.rb:44:in `validate_order_products'
+Filter chain halted as :validate_order_products rendered or redirected
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 12130)
+
+
+Started POST "/orders?id=3" for 127.0.0.1 at 2022-10-22 20:09:01 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mOrderProduct Load (0.2ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders_controller.rb:44:in `validate_order_products'
+Filter chain halted as :validate_order_products rendered or redirected
+Completed 403 Forbidden in 29ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 12535)
+
+
+Started POST "/orders/3/products?id=1" for 127.0.0.1 at 2022-10-22 20:20:33 -0500
+Processing by Orders::ProductsController#create as */*
+  Parameters: {"id"=>"1", "order_id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrderProduct Load (0.4ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:39:in `find_order_product'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrderProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 3], ["product_id", 1], ["amount", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:35:in `find_order'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 25974)
+
+
+Started POST "/orders?id=3" for 127.0.0.1 at 2022-10-22 20:20:39 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (2.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mOrderProduct Load (0.2ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/controllers/orders_controller.rb:44:in `validate_order_products'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Completed 422 Unprocessable Entity in 30ms (ActiveRecord: 4.9ms | Allocations: 8773)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Status Unexpected transition):
+  
+app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 20:21:57 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:8:in `new'
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `new'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  ↳ app/controllers/orders_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:8:in `new'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:10:in `new'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 3468)
+
+
+Started POST "/orders/4/products?id=1" for 127.0.0.1 at 2022-10-22 20:22:10 -0500
+Processing by Orders::ProductsController#create as */*
+  Parameters: {"id"=>"1", "order_id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrderProduct Load (0.4ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:39:in `find_order_product'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrderProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 4], ["product_id", 1], ["amount", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:35:in `find_order'
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 6228)
+
+
+Started POST "/orders?id=4" for 127.0.0.1 at 2022-10-22 20:22:15 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:44:in `validate_order_products'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mOrder Update (1.7ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 4]]
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.2ms | Allocations: 6864)
+
+
+  
+NameError (undefined local variable or method `order' for #<OrdersController:0x00000000093198>
+Did you mean?  @order):
+  
+app/controllers/orders_controller.rb:17:in `create'
+Started PUT "/orders/4" for 127.0.0.1 at 2022-10-22 20:22:44 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Update (0.2ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 4]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/order.rb:18:in `next_status'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 4.9ms | Allocations: 29274)
+
+
+Started PUT "/orders/4" for 127.0.0.1 at 2022-10-22 20:23:18 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Update (0.3ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 4]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/order.rb:18:in `next_status'
+  [1m[36mOrderProduct Pluck (0.2ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 4.0ms | Allocations: 29196)
+
+
+Started PUT "/orders/4" for 127.0.0.1 at 2022-10-22 20:23:27 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:40:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 4]]
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:17:in `next_status'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/order.rb:18:in `next_status'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/controllers/orders_controller.rb:28:in `update'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 1.9ms | Allocations: 5810)
+
+

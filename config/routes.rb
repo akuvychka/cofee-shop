@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :products, only: :index
   resources :combos, only: :index
-  resources :orders, only: %i[new destroy] do
+  resources :orders, only: %i[new create update destroy] do
     resources :products, only: %i[create destroy], controller: 'orders/products'
   end
 end
