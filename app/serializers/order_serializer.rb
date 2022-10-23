@@ -1,9 +1,10 @@
-class OrderSerializer
-  include JSONAPI::Serializer
+# frozen_string_literal: true
 
+# Serializer for order
+class OrderSerializer < BaseSerializer
   set_type :order
 
-  attributes :id, :final_price
+  attribute :final_price
 
-  has_many :products
+  has_many :order_products
 end

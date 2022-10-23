@@ -6236,3 +6236,1152 @@ Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1071)
   [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Siu"], ["last_name", "Heller"], ["contact_type", 1], ["contact", "hanh_macejkovic@grady.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "quasi"], ["price", 33.0], ["tax_rate", 0.05449169587272662], ["storage_amount", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Tessa"], ["last_name", "Lang"], ["contact_type", 1], ["contact", "elfreda@lang.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mae"], ["last_name", "Rempel"], ["contact_type", 1], ["contact", "elizabeth_schuppe@mckenzie.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "nemo"], ["price", 12.0], ["tax_rate", 0.02758828959443671], ["storage_amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 24744)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "minima"], ["price", 67.0], ["tax_rate", 0.334582762660977], ["storage_amount", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Wade"], ["last_name", "Prosacco"], ["contact_type", 1], ["contact", "hedwig.boyle@mosciski.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (1.1ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1701)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Alexia"], ["last_name", "Turner"], ["contact_type", 1], ["contact", "earline.littel@runtestokes.com"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "sapiente"], ["price", 27.0], ["tax_rate", 0.3978070519846491], ["storage_amount", 10]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.3ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 24745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "quibusdam"], ["price", 1.0], ["tax_rate", 0.7483499832050937], ["storage_amount", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jin"], ["last_name", "Hegmann"], ["contact_type", 1], ["contact", "laurette.davis@reinger.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1701)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Romona"], ["last_name", "Keeling"], ["contact_type", 1], ["contact", "micaela@torphy.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "aspernatur"], ["price", 73.0], ["tax_rate", 0.2747376528619326], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 24744)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "tempora"], ["price", 51.0], ["tax_rate", 0.853574933538262], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Mae"], ["last_name", "Lueilwitz"], ["contact_type", 1], ["contact", "daphine.hintz@gislason.com"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1701)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Ebony"], ["last_name", "Towne"], ["contact_type", 1], ["contact", "jina@erdmanmarks.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "eius"], ["price", 4.0], ["tax_rate", 0.3149205344814328], ["storage_amount", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 24744)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "assumenda"], ["price", 7.0], ["tax_rate", 0.7115853009731904], ["storage_amount", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Adrienne"], ["last_name", "Treutel"], ["contact_type", 1], ["contact", "carmine@goodwinborer.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1701)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Juli"], ["last_name", "Gerhold"], ["contact_type", 1], ["contact", "renaldo@rosenbaumdubuque.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "ex"], ["price", 15.0], ["tax_rate", 0.2217179037175595], ["storage_amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 24744)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Stanley"], ["last_name", "Becker"], ["contact_type", 1], ["contact", "mack_damore@kirlinmclaughlin.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "iste"], ["price", 74.0], ["tax_rate", 0.06182230435963421], ["storage_amount", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1701)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (1.7ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Laci"], ["last_name", "Blanda"], ["contact_type", 1], ["contact", "riva.mueller@dickensstehr.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (1.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "quaerat"], ["price", 97.0], ["tax_rate", 0.4352659001242775], ["storage_amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 24744)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jerold"], ["last_name", "Gerlach"], ["contact_type", 1], ["contact", "allena@lueilwitz.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "vel"], ["price", 42.0], ["tax_rate", 0.301373851099427], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 24744)
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" ORDER BY "order_products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Lilliam"], ["last_name", "Gutkowski"], ["contact_type", 1], ["contact", "shari@graham.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.3ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "laborum"], ["price", 78.0], ["tax_rate", 0.8638794605765036], ["storage_amount", 8]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 24759)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Monet"], ["last_name", "Marks"], ["contact_type", 1], ["contact", "shelley.schowalter@heidenreich.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "quis"], ["price", 24.0], ["tax_rate", 0.137189680308739], ["storage_amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 24760)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "magni"], ["price", 57.0], ["tax_rate", 0.9293129288048313], ["storage_amount", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Vickie"], ["last_name", "Pagac"], ["contact_type", 1], ["contact", "wynell@maggio.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 8890)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by CombosController#index as HTML
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 7275)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCombo Create (0.2ms)[0m  [1m[32mINSERT INTO "combos" ("name", "active") VALUES (?, ?)[0m  [["name", "odit"], ["active", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CombosController#index as HTML
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  [1m[36mProductCombo Load (0.9ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 10627)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCombo Create (0.1ms)[0m  [1m[32mINSERT INTO "combos" ("name", "active") VALUES (?, ?)[0m  [["name", "quaerat"], ["active", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCombo Create (0.0ms)[0m  [1m[32mINSERT INTO "combos" ("name", "active") VALUES (?, ?)[0m  [["name", "officia"], ["active", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CombosController#index as HTML
+  [1m[36mCombo Load (0.0ms)[0m  [1m[34mSELECT "combos".* FROM "combos" WHERE "combos"."active" = ?[0m  [["active", 1]]
+  [1m[36mProductCombo Load (0.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."combo_id" = ?[0m  [["combo_id", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1300)
+  [1m[36mCombo Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "combos"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Charise"], ["last_name", "Tromp"], ["contact_type", 1], ["contact", "alyson.gutmann@denesik.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "reprehenderit"], ["price", 64.0], ["tax_rate", 0.7459262814687027], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 20305)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "nesciunt"], ["price", 42.0], ["tax_rate", 0.4221844764522052], ["storage_amount", 8]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Catherin"], ["last_name", "Bernhard"], ["contact_type", 1], ["contact", "mathilda@larkin.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"product_id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1830)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 496)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "accusantium"], ["price", 44.0], ["tax_rate", 0.9235906616164133], ["storage_amount", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  [1m[36mProductCombo Load (0.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1301)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "at"], ["price", 61.0], ["tax_rate", 0.06819024967431786], ["storage_amount", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "expedita"], ["price", 56.0], ["tax_rate", 0.9760978933971212], ["storage_amount", 0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (storage_amount > 0)[0m
+  [1m[36mProductCombo Load (0.0ms)[0m  [1m[34mSELECT "product_combos".* FROM "product_combos" WHERE "product_combos"."product_id" = ?[0m  [["product_id", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1071)
+  [1m[36mProduct Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Yong"], ["last_name", "Koch"], ["contact_type", 1], ["contact", "chrissy@mckenzie.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Dessie"], ["last_name", "Cassin"], ["contact_type", 1], ["contact", "forrest.vonrueden@considinekoelpin.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 1], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Alysha"], ["last_name", "Yost"], ["contact_type", 1], ["contact", "ned@olsondonnelly.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 5], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Elsy"], ["last_name", "Dickens"], ["contact_type", 1], ["contact", "bradley.shanahan@koepptrantow.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Maryanne"], ["last_name", "Torp"], ["contact_type", 1], ["contact", "alishia_prohaska@walter.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Cristopher"], ["last_name", "Pacocha"], ["contact_type", 1], ["contact", "alfred@friesen.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Lurlene"], ["last_name", "Kessler"], ["contact_type", 1], ["contact", "marcus@jones.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Sheree"], ["last_name", "Hoeger"], ["contact_type", 1], ["contact", "aracelis@mann.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Marlys"], ["last_name", "Zieme"], ["contact_type", 1], ["contact", "thresa.wilkinson@greenholt.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Renae"], ["last_name", "Ledner"], ["contact_type", 1], ["contact", "katherin.cole@boehm.com"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Cecil"], ["last_name", "Kling"], ["contact_type", 1], ["contact", "dusty_metz@larson.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Camelia"], ["last_name", "Hilll"], ["contact_type", 1], ["contact", "kyla@davis.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Karina"], ["last_name", "Dach"], ["contact_type", 1], ["contact", "tresa@stantonluettgen.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Donovan"], ["last_name", "O'Keefe"], ["contact_type", 1], ["contact", "shala@roob.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Ozie"], ["last_name", "Mayer"], ["contact_type", 1], ["contact", "ahmad@bayer.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Adaline"], ["last_name", "Legros"], ["contact_type", 1], ["contact", "ehtel@langworth.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Fern"], ["last_name", "Reichel"], ["contact_type", 1], ["contact", "sang_rice@white.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Zoila"], ["last_name", "Tremblay"], ["contact_type", 1], ["contact", "galina@breitenberg.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Kristal"], ["last_name", "Blanda"], ["contact_type", 1], ["contact", "reagan@prohaskapowlowski.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Nell"], ["last_name", "Beer"], ["contact_type", 1], ["contact", "tegan_mosciski@weber.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Clarine"], ["last_name", "Thompson"], ["contact_type", 1], ["contact", "athena.heaney@simonismohr.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Donnette"], ["last_name", "Torp"], ["contact_type", 1], ["contact", "geri_bins@brown.name"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Leslie"], ["last_name", "Bailey"], ["contact_type", 1], ["contact", "celestina@baileyjacobs.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Elma"], ["last_name", "Lakin"], ["contact_type", 1], ["contact", "maximina.bradtke@hoeger.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Maryln"], ["last_name", "Schuppe"], ["contact_type", 1], ["contact", "damian_runte@swift.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Royce"], ["last_name", "Ratke"], ["contact_type", 1], ["contact", "jacquelin_pfeffer@hagenes.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Leonard"], ["last_name", "Bechtelar"], ["contact_type", 1], ["contact", "consuela.funk@brown.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Tommye"], ["last_name", "Barrows"], ["contact_type", 1], ["contact", "rosalyn@harber.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Fran"], ["last_name", "Breitenberg"], ["contact_type", 1], ["contact", "raphael@oberbrunner.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Arletha"], ["last_name", "Barrows"], ["contact_type", 1], ["contact", "jamee@terryoconnell.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Sondra"], ["last_name", "Miller"], ["contact_type", 1], ["contact", "darin_beahan@connellyboyer.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Update (0.0ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 5], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.2ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Audrey"], ["last_name", "Dare"], ["contact_type", 1], ["contact", "isabell_robel@weber.co.uk"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "ipsum"], ["price", 40.0], ["tax_rate", 0.5369414909330088], ["storage_amount", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 24001)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "quis"], ["price", 80.0], ["tax_rate", 0.3708493890755531], ["storage_amount", 7]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Particia"], ["last_name", "Gleason"], ["contact_type", 1], ["contact", "shelba@ornlynch.ca"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 2430)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Kenneth"], ["last_name", "Carter"], ["contact_type", 1], ["contact", "everette.homenick@bartolettithiel.com"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "suscipit"], ["price", 73.0], ["tax_rate", 0.9897338679393942], ["storage_amount", 4]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#destroy as HTML
+  Parameters: {"order_id"=>"1", "id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "order_products" WHERE "order_products"."id" = ?[0m  [["id", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1358)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Tessie"], ["last_name", "Bartell"], ["contact_type", 1], ["contact", "yolanda@reichel.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "rem"], ["price", 71.0], ["tax_rate", 0.9189037558834792], ["storage_amount", 8]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#destroy as HTML
+  Parameters: {"order_id"=>"1", "id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1927)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Pablo"], ["last_name", "Tromp"], ["contact_type", 1], ["contact", "alfonso.waelchi@braun.info"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "ipsam"], ["price", 38.0], ["tax_rate", 0.8910979293626115], ["storage_amount", 9]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 24991)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "eligendi"], ["price", 1.0], ["tax_rate", 0.0478268005775383], ["storage_amount", 9]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.0ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Israel"], ["last_name", "Ratke"], ["contact_type", 1], ["contact", "carin@mayerhagenes.us"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#create as HTML
+  Parameters: {"id"=>"1", "order_id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 2], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 2039)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Anamaria"], ["last_name", "Barrows"], ["contact_type", 1], ["contact", "elvis@mertzosinski.com"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "fugit"], ["price", 19.0], ["tax_rate", 0.1757991786543535], ["storage_amount", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#destroy as HTML
+  Parameters: {"order_id"=>"1", "id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Destroy (0.0ms)[0m  [1m[31mDELETE FROM "order_products" WHERE "order_products"."id" = ?[0m  [["id", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1359)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCustomer Create (0.1ms)[0m  [1m[32mINSERT INTO "customers" ("first_name", "last_name", "contact_type", "contact") VALUES (?, ?, ?, ?)[0m  [["first_name", "Celsa"], ["last_name", "Abbott"], ["contact_type", 1], ["contact", "celine_langosh@trantowroberts.biz"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrder Create (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "tax_rate", "storage_amount") VALUES (?, ?, ?, ?)[0m  [["name", "aliquid"], ["price", 45.0], ["tax_rate", 0.8529979883963784], ["storage_amount", 8]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderProduct Create (0.0ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 1], ["product_id", 1], ["amount", 2]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Orders::ProductsController#destroy as HTML
+  Parameters: {"order_id"=>"1", "id"=>"1"}
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Update (0.0ms)[0m  [1m[33mUPDATE "order_products" SET "amount" = ? WHERE "order_products"."id" = ?[0m  [["amount", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1927)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

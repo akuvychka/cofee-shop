@@ -1,9 +1,10 @@
-class ProductSerializer
-  include JSONAPI::Serializer
+# frozen_string_literal: true
 
+# Serializer for products that provides cofee shop
+class ProductSerializer < BaseSerializer
   set_type :product
 
-  attributes :id, :name, :price, :tax_rate
+  attributes :name, :price, :tax_rate
 
   has_many :combos
 end

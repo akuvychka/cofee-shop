@@ -1,9 +1,10 @@
-class ComboSerializer
-  include JSONAPI::Serializer
+# frozen_string_literal: true
 
+# Serializer for a products combos
+class ComboSerializer < BaseSerializer
   set_type :combo
 
-  attributes :id, :name, :full_price
+  attributes :name, :full_price
 
   has_many :products
 end
