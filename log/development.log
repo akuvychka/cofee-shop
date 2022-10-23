@@ -3662,3 +3662,422 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 1.9ms | Allocations: 5810)
 
 
+  [1m[36mOrder Load (3.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 22:52:01 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = ? AND "orders"."status" = ?[0m  [["customer_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:51:in `check_existing_orders'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mOrderProduct Pluck (0.3ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:11:in `new'
+Completed 200 OK in 90ms (Views: 0.7ms | ActiveRecord: 4.5ms | Allocations: 19125)
+
+
+Started POST "/orders/5/products?id=1" for 127.0.0.1 at 2022-10-22 22:52:18 -0500
+Processing by Orders::ProductsController#create as */*
+  Parameters: {"id"=>"1", "order_id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrderProduct Load (3.3ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:39:in `find_order_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrderProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 5], ["product_id", 1], ["amount", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:35:in `find_order'
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 15244)
+
+
+Started POST "/orders?id=5" for 127.0.0.1 at 2022-10-22 22:52:23 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:45:in `validate_order_products'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 5]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 4666)
+
+
+Started PUT "/orders/5" for 127.0.0.1 at 2022-10-22 22:52:37 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Update (0.2ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 5]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `next_status'
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 5830)
+
+
+Started PUT "/orders/5" for 127.0.0.1 at 2022-10-22 22:52:39 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"5"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Update (0.4ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 5]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `next_status'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 5]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 5798)
+
+
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [a871849a-56bf-4558-8fbf-ee075a9d13f9] Performing SendOrderReadyNotificationJob (Job ID: a871849a-56bf-4558-8fbf-ee075a9d13f9) from Async(default) enqueued at  with arguments: 5
+[ActiveJob] [SendOrderReadyNotificationJob] [a871849a-56bf-4558-8fbf-ee075a9d13f9]   [1m[36mOrder Load (6.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [a871849a-56bf-4558-8fbf-ee075a9d13f9] Error performing SendOrderReadyNotificationJob (Job ID: a871849a-56bf-4558-8fbf-ee075a9d13f9) from Async(default) in 159.23ms: NoMethodError (undefined method `received!' for [#<Order id: 5, status: "done", customer_id: 1, final_price: 0.0>]:Array):
+/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/jobs/send_order_ready_notification_job.rb:9:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:59:in `block in _perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/i18n-1.12.0/lib/i18n.rb:317:in `with_locale'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:58:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:46:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:18:in `perform_now'
+(irb):22:in `<main>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/workspace.rb:119:in `eval'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/workspace.rb:119:in `evaluate'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/context.rb:480:in `evaluate'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:529:in `block (2 levels) in eval_input'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:722:in `signal_status'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:510:in `block in eval_input'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/ruby-lex.rb:257:in `block (2 levels) in each_top_level_statement'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/ruby-lex.rb:239:in `loop'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/ruby-lex.rb:239:in `block in each_top_level_statement'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/ruby-lex.rb:238:in `catch'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb/ruby-lex.rb:238:in `each_top_level_statement'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:509:in `eval_input'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:443:in `block in run'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:442:in `catch'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:442:in `run'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/irb-1.4.2/lib/irb.rb:375:in `start'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/commands/console/console_command.rb:70:in `start'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/commands/console/console_command.rb:19:in `start'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/commands/console/console_command.rb:102:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/command/base.rb:87:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/command.rb:48:in `invoke'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/commands.rb:18:in `<main>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/bootsnap-1.13.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/bootsnap-1.13.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+bin/rails:4:in `<main>'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Update (0.7ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 5]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/orders/new?customer_id=1" for 127.0.0.1 at 2022-10-22 22:56:54 -0500
+Processing by OrdersController#new as */*
+  Parameters: {"customer_id"=>"1"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = ? AND "orders"."status" = ?[0m  [["customer_id", 1], ["status", 0]]
+  ↳ app/controllers/orders_controller.rb:51:in `check_existing_orders'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mOrder Create (0.2ms)[0m  [1m[32mINSERT INTO "orders" ("status", "customer_id", "final_price") VALUES (?, ?, ?)[0m  [["status", 0], ["customer_id", 1], ["final_price", 0.0]]
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:9:in `new'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:11:in `new'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 20197)
+
+
+Started POST "/orders/6/products?id=1" for 127.0.0.1 at 2022-10-22 22:57:04 -0500
+Processing by Orders::ProductsController#create as */*
+  Parameters: {"id"=>"1", "order_id"=>"6"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrderProduct Load (0.4ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."product_id" = ? AND "order_products"."order_id" = ? LIMIT ?[0m  [["product_id", 1], ["order_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:39:in `find_order_product'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrderProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "order_products" ("order_id", "product_id", "amount") VALUES (?, ?, ?)[0m  [["order_id", 6], ["product_id", 1], ["amount", 1]]
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders/products_controller.rb:12:in `create'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders/products_controller.rb:35:in `find_order'
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders/products_controller.rb:19:in `create'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 15619)
+
+
+Started POST "/orders?id=6" for 127.0.0.1 at 2022-10-22 22:57:08 -0500
+Processing by OrdersController#create as */*
+  Parameters: {"id"=>"6"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:45:in `validate_order_products'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 1], ["id", 6]]
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:15:in `create'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 4673)
+
+
+Started PUT "/orders/6" for 127.0.0.1 at 2022-10-22 22:57:12 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"6"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 2], ["id", 6]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `next_status'
+  [1m[36mOrderProduct Pluck (0.1ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mOrderProduct Load (0.1ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 5837)
+
+
+Started PUT "/orders/6" for 127.0.0.1 at 2022-10-22 22:57:13 -0500
+Processing by OrdersController#update as */*
+  Parameters: {"id"=>"6"}
+Can't verify CSRF token authenticity.
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:41:in `find_order'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 3], ["id", 6]]
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/order.rb:19:in `next_status'
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/order.rb:20:in `next_status'
+  [1m[36mOrderProduct Pluck (0.0ms)[0m  [1m[34mSELECT "order_products"."id" FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mOrderProduct Load (0.0ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 6]]
+  ↳ app/controllers/orders_controller.rb:29:in `update'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/serializers/order_product_serializer.rb:10:in `block in <class:OrderProductSerializer>'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 5804)
+
+
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+[ActiveJob] Enqueued SendOrderReadyNotificationJob (Job ID: 7ed14d8e-6dbc-46a8-86f2-042b667e139c) to Async(default) with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [7ed14d8e-6dbc-46a8-86f2-042b667e139c] Performing SendOrderReadyNotificationJob (Job ID: 7ed14d8e-6dbc-46a8-86f2-042b667e139c) from Async(default) enqueued at 2022-10-23T03:57:38Z with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [7ed14d8e-6dbc-46a8-86f2-042b667e139c]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [7ed14d8e-6dbc-46a8-86f2-042b667e139c] Error performing SendOrderReadyNotificationJob (Job ID: 7ed14d8e-6dbc-46a8-86f2-042b667e139c) from Async(default) in 26.15ms: NoMethodError (undefined method `received!' for [#<Order id: 6, status: "done", customer_id: 1, final_price: 0.0>]:Array):
+/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/jobs/send_order_ready_notification_job.rb:9:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:59:in `block in _perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/i18n-1.12.0/lib/i18n.rb:322:in `with_locale'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:58:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:46:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:24:in `block in execute'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:72:in `block in wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:71:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:22:in `execute'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+[ActiveJob] Enqueued SendOrderReadyNotificationJob (Job ID: 973bb37e-e523-4bb4-b2a2-bfd794f911f6) to Async(default) with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [973bb37e-e523-4bb4-b2a2-bfd794f911f6] Performing SendOrderReadyNotificationJob (Job ID: 973bb37e-e523-4bb4-b2a2-bfd794f911f6) from Async(default) enqueued at 2022-10-23T03:59:18Z with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [973bb37e-e523-4bb4-b2a2-bfd794f911f6]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [973bb37e-e523-4bb4-b2a2-bfd794f911f6] Error performing SendOrderReadyNotificationJob (Job ID: 973bb37e-e523-4bb4-b2a2-bfd794f911f6) from Async(default) in 18.71ms: NoMethodError (undefined method `first' for #<Order id: 6, status: "done", customer_id: 1, final_price: 0.0>):
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activemodel-7.0.4/lib/active_model/attribute_methods.rb:458:in `method_missing'
+/Users/artemkuvychka/Documents/Work/assesment/cofee-shop/app/jobs/send_order_ready_notification_job.rb:8:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:59:in `block in _perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/i18n-1.12.0/lib/i18n.rb:322:in `with_locale'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:58:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:46:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:24:in `block in execute'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:72:in `block in wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:71:in `wrap'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/execution.rb:22:in `execute'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/activejob-7.0.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/Users/artemkuvychka/.rvm/gems/ruby-3.0.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+[ActiveJob] Enqueued SendOrderReadyNotificationJob (Job ID: 93f414e0-f557-444e-afd8-400d4d1c6069) to Async(default) with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069] Performing SendOrderReadyNotificationJob (Job ID: 93f414e0-f557-444e-afd8-400d4d1c6069) from Async(default) enqueued at 2022-10-23T03:59:29Z with arguments: 6
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069]   [1m[36mOrder Update (0.5ms)[0m  [1m[33mUPDATE "orders" SET "status" = ? WHERE "orders"."id" = ?[0m  [["status", 4], ["id", 6]]
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [SendOrderReadyNotificationJob] [93f414e0-f557-444e-afd8-400d4d1c6069] Performed SendOrderReadyNotificationJob (Job ID: 93f414e0-f557-444e-afd8-400d4d1c6069) from Async(default) in 62.92ms
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]

@@ -9,6 +9,8 @@ class Order < ApplicationRecord
   has_many :order_products
   has_many :products, through: :order_products
 
+  after_save :check_is_done
+
   def on_order_change
     # TODO: add logic for update total_price
   end
@@ -34,4 +36,8 @@ class Order < ApplicationRecord
     end
   end
   # rubocop:enable Metrics/AbcSize
+
+  def check_is_done
+    SendOrderReadyNotificationJob.perform_later(id) if status == :done
+  end
 end
